@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ProFleet Safety & Compliance LLC — Bay Area mobile fleet inspections, smog checks, compliance support, and ELD & dash cam solutions." />
+  <meta name="theme-color" content="#071a3d" />
+  <title>ProFleet Safety & Compliance LLC</title>
+  <style>
+    :root{
+      --navy:#071a3d;
+      --navy-2:#0b2554;
+      --blue:#0b55e8;
+      --blue-2:#2a72ff;
+      --ink:#101828;
+      --muted:#5d6b82;
+      --line:#d9e3f1;
+      --bg:#f5f8fd;
+      --white:#ffffff;
+      --shadow:0 18px 50px rgba(7,26,61,.14);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{width:min(1160px, calc(100% - 32px)); margin:auto}
+    .topbar{
+      background:var(--navy);
+      color:#dbe8ff;
+      font-size:.92rem;
+    }
+    .topbar .wrap{
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      padding:8px 0;
+    }
+    .topbar a{color:white;text-decoration:none;font-weight:700}
+    header{
+      position:sticky; top:0; z-index:20;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(7,26,61,.08);
+    }
+    nav{
+      min-height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{text-decoration:none;display:flex;align-items:center;gap:13px}
+    .mark{
+      width:52px;height:42px;border-radius:12px;
+      background:linear-gradient(135deg,var(--navy) 0 48%,var(--blue) 48%);
+      color:#fff;font-weight:1000;font-style:italic;
+      display:grid;place-items:center;
+      letter-spacing:-3px;font-size:1.35rem;
+      box-shadow:0 8px 20px rgba(11,85,232,.2)
+    }
+    .brand-copy strong{display:block;font-size:1.12rem;letter-spacing:.07em}
+    .brand-copy span{display:block;color:var(--muted);font-size:.73rem;letter-spacing:.15em;font-weight:800}
+    .navlinks{display:flex;align-items:center;gap:24px}
+    .navlinks a{text-decoration:none;color:#334155;font-weight:700;font-size:.93rem}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      min-height:48px;padding:0 20px;border-radius:13px;
+      text-decoration:none;font-weight:850;border:1px solid transparent;
+      transition:.2s ease;cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--blue);color:#fff;box-shadow:0 11px 26px rgba(11,85,232,.25)}
+    .btn-dark{background:var(--navy);color:#fff}
+    .btn-light{background:#fff;color:var(--navy);border-color:#cdd8ea}
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 84% 22%, rgba(42,114,255,.28), transparent 34%),
+        linear-gradient(135deg, #061735 0%, #0a275c 62%, #0b55e8 145%);
+      color:#fff;
+    }
+    .hero:after{
+      content:"";position:absolute;right:-140px;bottom:-220px;
+      width:620px;height:620px;border:1px solid rgba(255,255,255,.13);
+      border-radius:50%;box-shadow:0 0 0 80px rgba(255,255,255,.03),0 0 0 160px rgba(255,255,255,.025)
+    }
+    .hero-grid{
+      position:relative;z-index:1;
+      display:grid;grid-template-columns:1.06fr .94fr;
+      gap:46px;align-items:center;padding:84px 0 72px;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:9px;
+      padding:8px 12px;border:1px solid rgba(255,255,255,.2);
+      background:rgba(255,255,255,.08);border-radius:999px;
+      text-transform:uppercase;letter-spacing:.14em;font-weight:850;font-size:.74rem;
+    }
+    .dot{width:9px;height:9px;border-radius:50%;background:#62a0ff;box-shadow:0 0 0 5px rgba(98,160,255,.13)}
+    h1{font-size:clamp(2.7rem,5.4vw,5.25rem);line-height:.96;letter-spacing:-.05em;margin:22px 0 20px;max-width:820px}
+    h1 em{font-style:normal;color:#71a8ff}
+    .hero p{font-size:1.16rem;color:#d8e5fb;max-width:680px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-actions .btn-light{background:#fff}
+    .trustline{display:flex;gap:24px;flex-wrap:wrap;margin-top:32px;color:#d5e2f8;font-weight:700;font-size:.9rem}
+    .trustline span:before{content:"✓";color:#7fb1ff;margin-right:7px;font-weight:1000}
+    .visual-card{
+      border-radius:28px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 28px 60px rgba(0,0,0,.32);
+      border:1px solid rgba(255,255,255,.35);
+      transform:rotate(1deg);
+    }
+    .visual-card img{width:100%;display:block}
+    .section{padding:74px 0}
+    .section-title{max-width:730px;margin-bottom:34px}
+    .kicker{text-transform:uppercase;color:var(--blue);font-weight:900;letter-spacing:.14em;font-size:.76rem}
+    h2{font-size:clamp(2rem,3.6vw,3.25rem);line-height:1.08;letter-spacing:-.04em;margin:8px 0 12px;color:var(--navy)}
+    .section-title p{color:var(--muted);font-size:1.05rem;margin:0}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{
+      background:#fff;border:1px solid #dce5f1;border-radius:18px;padding:24px;
+      box-shadow:0 10px 30px rgba(7,26,61,.055);
+    }
+    .icon{
+      width:46px;height:46px;border-radius:13px;background:#eaf1ff;color:var(--blue);
+      display:grid;place-items:center;font-size:1.25rem;font-weight:1000;margin-bottom:17px;
+    }
+    .service h3{margin:0 0 7px;color:var(--navy);font-size:1.14rem}
+    .service p{margin:0;color:var(--muted)}
+    .highlight{background:#fff}
+    .split{
+      display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center
+    }
+    .panel{
+      background:linear-gradient(145deg,#071a3d,#0c2b64);
+      color:#fff;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)
+    }
+    .panel h3{font-size:1.65rem;margin:0 0 8px}
+    .panel p{color:#d9e5f8;margin:0 0 24px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .contact-tile{
+      padding:16px;border-radius:14px;background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);text-decoration:none
+    }
+    .contact-tile small{display:block;color:#aac3ec;text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.66rem}
+    .contact-tile strong{display:block;margin-top:4px;font-size:.96rem;overflow-wrap:anywhere}
+    .checklist{display:grid;gap:14px;margin-top:26px}
+    .check{display:flex;gap:12px;align-items:flex-start}
+    .check b{
+      flex:0 0 auto;width:27px;height:27px;border-radius:50%;display:grid;place-items:center;
+      background:#eaf1ff;color:var(--blue)
+    }
+    .check strong{display:block;color:var(--navy)}
+    .check span{display:block;color:var(--muted);font-size:.95rem;margin-top:2px}
+    .cta{padding:0 0 76px}
+    .cta-box{
+      background:linear-gradient(135deg,#0b55e8,#071a3d);
+      color:#fff;border-radius:26px;padding:44px;
+      display:flex;justify-content:space-between;align-items:center;gap:30px;
+      box-shadow:var(--shadow)
+    }
+    .cta-box h2{color:#fff;margin:0 0 8px;font-size:clamp(1.8rem,3vw,2.8rem)}
+    .cta-box p{margin:0;color:#dce8ff}
+    footer{
+      background:#05132d;color:#adbedc;padding:30px 0;
+      border-top:1px solid rgba(255,255,255,.08)
+    }
+    footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+    footer strong{color:#fff}
+    .mobile-cta{display:none}
+    @media(max-width:900px){
+      .navlinks a:not(.btn){display:none}
+      .hero-grid,.split{grid-template-columns:1fr}
+      .visual-card{max-width:680px}
+      .services{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:640px){
+      .topbar .wrap{justify-content:center;text-align:center}
+      nav{min-height:68px}
+      .brand-copy strong{font-size:.95rem}.brand-copy span{font-size:.62rem}
+      .navlinks .btn{display:none}
+      .hero-grid{padding:58px 0 52px;gap:32px}
+      h1{font-size:clamp(2.55rem,13vw,4rem)}
+      .hero p{font-size:1.03rem}
+      .services{grid-template-columns:1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .cta-box{padding:30px;align-items:flex-start;flex-direction:column}
+      .section{padding:58px 0}
+      body{padding-bottom:74px}
+      .mobile-cta{
+        display:grid;grid-template-columns:1fr 1fr;gap:10px;
+        position:fixed;z-index:50;left:0;right:0;bottom:0;
+        padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+        background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+        border-top:1px solid #d7e1ef;
+      }
+      .mobile-cta .btn{min-height:48px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <span>Serving the Bay Area &amp; surrounding areas · On-site service available</span>
+      <span><a href="tel:+19256058147">925-605-8147</a> &nbsp;·&nbsp; <a href="mailto:profleetsafety@gmail.com">profleetsafety@gmail.com</a></span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="wrap">
+      <a class="brand" href="#top" aria-label="ProFleet home">
+        <span class="mark">PF</span>
+        <span class="brand-copy"><strong>PROFLEET</strong><span>SAFETY &amp; COMPLIANCE LLC</span></span>
+      </a>
+      <div class="navlinks">
+        <a href="#services">Services</a>
+        <a href="#about">Why ProFleet</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="tel:+19256058147">Call 925-605-8147</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Safety today. Reliability every mile.</div>
+          <h1>Keep your fleet <em>compliant, safe &amp; road ready.</em></h1>
+          <p>Mobile fleet safety and compliance services for businesses across the Bay Area — inspections, smog checks, fleet solutions, and ELD &amp; dash cam support.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+19256058147">Call Paul</a>
+            <a class="btn btn-light" href="mailto:profleetsafety@gmail.com?subject=Service%20Request%20-%20ProFleet">Request Service</a>
+            <a class="btn btn-light" href="contact.vcf" download>Save Contact</a>
+          </div>
+          <div class="trustline">
+            <span>Safety focused</span>
+            <span>Reliable service</span>
+            <span>Expert support</span>
+          </div>
+        </div>
+        <div class="visual-card">
+          <img src="profleet-card.png" alt="ProFleet Safety & Compliance business card" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <div class="kicker">Our services</div>
+          <h2>Practical fleet support, delivered on-site.</h2>
+          <p>From routine compliance inspections to equipment solutions, ProFleet helps operators keep vehicles ready for the road.</p>
+        </div>
+        <div class="services">
+          <article class="service">
+            <div class="icon">✓</div>
+            <h3>Smog Check</h3>
+            <p>California licensed smog check service.</p>
+          </article>
+          <article class="service">
+            <div class="icon">90</div>
+            <h3>90-Day / BIT Inspections</h3>
+            <p>DOT-compliant inspection support for your fleet.</p>
+          </article>
+          <article class="service">
+            <div class="icon">A</div>
+            <h3>Annual Vehicle Inspections</h3>
+            <p>FMCSA-compliant annual vehicle inspections.</p>
+          </article>
+          <article class="service">
+            <div class="icon">⚙</div>
+            <h3>Fleet Related Solutions</h3>
+            <p>On-site, reliable and professional fleet support.</p>
+          </article>
+          <article class="service">
+            <div class="icon">▣</div>
+            <h3>ELD &amp; Dash Cam Solutions</h3>
+            <p>Sales, installation and support across multiple brands.</p>
+          </article>
+          <article class="service">
+            <div class="icon">↗</div>
+            <h3>On-Site Service</h3>
+            <p>Convenient service throughout the Bay Area and surrounding areas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlight" id="about">
+      <div class="wrap split">
+        <div>
+          <div class="kicker">Why ProFleet</div>
+          <h2>Compliance support without the runaround.</h2>
+          <p style="color:var(--muted);font-size:1.06rem;margin:0">ProFleet Safety &amp; Compliance LLC is focused on helping fleet operators stay compliant, safe and road ready with dependable on-site service.</p>
+          <div class="checklist">
+            <div class="check"><b>✓</b><div><strong>Safety focused</strong><span>Services centered on fleet safety and regulatory readiness.</span></div></div>
+            <div class="check"><b>✓</b><div><strong>Reliable service</strong><span>Professional support where your vehicles operate.</span></div></div>
+            <div class="check"><b>✓</b><div><strong>Customer satisfaction</strong><span>Clear communication and practical fleet solutions.</span></div></div>
+          </div>
+        </div>
+
+        <aside class="panel" id="contact">
+          <h3>Paul Bains</h3>
+          <p>Owner / Inspector · ProFleet Safety &amp; Compliance LLC</p>
+          <div class="contact-grid">
+            <a class="contact-tile" href="tel:+19256058147">
+              <small>Call</small><strong>925-605-8147</strong>
+            </a>
+            <a class="contact-tile" href="sms:+19256058147">
+              <small>Text</small><strong>925-605-8147</strong>
+            </a>
+            <a class="contact-tile" href="mailto:profleetsafety@gmail.com">
+              <small>Email</small><strong>profleetsafety@gmail.com</strong>
+            </a>
+            <a class="contact-tile" href="https://profleetsafety.com">
+              <small>Website</small><strong>profleetsafety.com</strong>
+            </a>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+            <a class="btn btn-primary" href="mailto:profleetsafety@gmail.com?subject=Service%20Request%20-%20ProFleet">Request Service</a>
+            <a class="btn btn-light" href="contact.vcf" download>Save Contact</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="cta-box">
+          <div>
+            <h2>Need a fleet inspection or compliance service?</h2>
+            <p>Call or email Paul to discuss what your fleet needs.</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn btn-light" href="tel:+19256058147">925-605-8147</a>
+            <a class="btn btn-dark" href="mailto:profleetsafety@gmail.com">Email ProFleet</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div><strong>ProFleet Safety &amp; Compliance LLC</strong><br>Safety today. Reliability every mile.</div>
+      <div>Bay Area &amp; surrounding areas · <a href="https://profleetsafety.com">profleetsafety.com</a></div>
+    </div>
+  </footer>
+
+  <div class="mobile-cta" aria-label="Quick contact">
+    <a class="btn btn-dark" href="tel:+19256058147">Call Now</a>
+    <a class="btn btn-primary" href="mailto:profleetsafety@gmail.com?subject=Service%20Request%20-%20ProFleet">Request Service</a>
+  </div>
+</body>
+</html>
